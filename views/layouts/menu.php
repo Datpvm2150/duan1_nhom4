@@ -29,8 +29,8 @@
                                         <img src="assets/img/icon/en.png" alt="flag"> English
                                         <i class="fa fa-angle-down"></i>
                                         <ul class="dropdown-list">
-                                            <li><a href="#"><img src="assets/img/icon/en.png" alt="flag"> english</a></li>
-                                            <li><a href="#"><img src="assets/img/icon/fr.png" alt="flag"> french</a></li>
+                                            <li><a href="#"><img src="assets/img/icon/en.png" alt="flag"> English</a></li>
+                                            <li><a href="#"><img src="assets/img/icon/fr.png" alt="flag"> French</a></li>
                                         </ul>
                                     </li>
                                 </ul>

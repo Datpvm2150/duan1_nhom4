@@ -30,7 +30,7 @@
                                 <address class="contact-block">
                                     <ul>
                                         <li><i class="pe-7s-home"></i>Số 13 - Trịnh Văn Bô - Nam Từ Liêm - Hà Nội</li>
-                                        <li><i class="pe-7s-mail"></i> <a href="mailto:nhom9duan1@plazathemes.com">nhom9duan1@gmail.com </a></li>
+                                        <li><i class="pe-7s-mail"></i> <a href="mailto:nhom9duan1@plazathemes.com">nhom4duan1@gmail.com </a></li>
                                         <li><i class="pe-7s-call"></i> <a href="tel:(056)800456789987">(056) 800 456 789-987</a></li>
                                     </ul>
                                 </address>
@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            <p>&copy; 2024 <b>UniMobi</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/"><b>Group 9</b></a></p>
+                            <p>&copy; 2025 <b>UniMobi</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/"><b>Group 4</b></a></p>
                         </div>
                     </div>
                 </div>
