@@ -1,6 +1,6 @@
 
 <!-- header -->
-  <?php include './views/layouts/header.php'; ?>
+<?php include './views/layouts/header.php'; ?>
   <!-- Navbar -->
   <?php include './views/layouts/navbar.php'; ?>
   <!-- /.navbar -->
