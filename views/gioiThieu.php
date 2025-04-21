@@ -130,7 +130,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="team-member mb-30">
                             <div class="team-thumb">
-                                <img src="assets/image/team/team_member_3.png" alt="">
+                                <img src="assets/image/team/team_member_3.jpg" alt="">
                                 <div class="team-social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
