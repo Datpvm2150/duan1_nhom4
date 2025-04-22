@@ -1,4 +1,4 @@
-<?php
+<?php 
 class GioHang
 {
     public $conn;
@@ -12,14 +12,12 @@ class GioHang
     {
         try {
             $sql = 'SELECT * FROM gio_hangs WHERE tai_khoan_id = :tai_khoan_id';
-
             $stmt = $this->conn->prepare($sql);
-
             $stmt->execute([':tai_khoan_id' => $id]);
-
             return $stmt->fetch();
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 
@@ -27,17 +25,15 @@ class GioHang
     {
         try {
             $sql = 'SELECT chi_tiet_gio_hangs.*, san_phams.ten_san_pham, san_phams.hinh_anh, san_phams.gia_san_pham, san_phams.gia_khuyen_mai
-             FROM chi_tiet_gio_hangs
-             INNER JOIN san_phams ON chi_tiet_gio_hangs.san_pham_id = san_phams.id
-             WHERE chi_tiet_gio_hangs.gio_hang_id = :gio_hang_id';
-
+                    FROM chi_tiet_gio_hangs
+                    INNER JOIN san_phams ON chi_tiet_gio_hangs.san_pham_id = san_phams.id
+                    WHERE chi_tiet_gio_hangs.gio_hang_id = :gio_hang_id';
             $stmt = $this->conn->prepare($sql);
-
             $stmt->execute([':gio_hang_id' => $id]);
-
             return $stmt->fetchAll();
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 
@@ -45,14 +41,12 @@ class GioHang
     {
         try {
             $sql = 'INSERT INTO gio_hangs (tai_khoan_id) VALUES (:id)';
-
             $stmt = $this->conn->prepare($sql);
-
             $stmt->execute([':id' => $id]);
-
             return $this->conn->lastInsertID();
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 
@@ -62,14 +56,16 @@ class GioHang
             $sql = 'UPDATE chi_tiet_gio_hangs
                     SET so_luong = :so_luong
                     WHERE gio_hang_id = :gio_hang_id AND san_pham_id = :san_pham_id';
-
             $stmt = $this->conn->prepare($sql);
-
-            $stmt->execute([':gio_hang_id' => $gio_hang_id, ':san_pham_id' => $san_pham_id, ':so_luong' => $so_luong]);
-
+            $stmt->execute([
+                ':gio_hang_id' => $gio_hang_id,
+                ':san_pham_id' => $san_pham_id,
+                ':so_luong' => $so_luong
+            ]);
             return true;
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 
@@ -77,61 +73,61 @@ class GioHang
     {
         try {
             $sql = 'INSERT INTO chi_tiet_gio_hangs (gio_hang_id, san_pham_id, so_luong)
-                    VALUES (:gio_hang_id, :san_pham_id, :so_luong) ';
-
+                    VALUES (:gio_hang_id, :san_pham_id, :so_luong)';
             $stmt = $this->conn->prepare($sql);
-
-            $stmt->execute([':gio_hang_id' => $gio_hang_id, ':san_pham_id' => $san_pham_id, ':so_luong' => $so_luong]);
-
+            $stmt->execute([
+                ':gio_hang_id' => $gio_hang_id,
+                ':san_pham_id' => $san_pham_id,
+                ':so_luong' => $so_luong
+            ]);
             return true;
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 
     public function clearDetailGioHang($gio_hang_id)
     {
         try {
-            $sql = 'DELETE FROM chi_tiet_gio_hangs WHERE gio_hang_id = :gio_hang_id ';
-
+            $sql = 'DELETE FROM chi_tiet_gio_hangs WHERE gio_hang_id = :gio_hang_id';
             $stmt = $this->conn->prepare($sql);
-
             $stmt->execute([':gio_hang_id' => $gio_hang_id]);
-
             return true;
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 
-    public function DeleteSanPhamByID($id_san_pham, $gioHangId)
+    public function DeleteSanPhamByID($id_san_pham, $gio_hang_id)
     {
         try {
-            $sql = 'DELETE FROM chi_tiet_gio_hangs WHERE san_pham_id = :san_pham_id AND gio_hang_id = :gio_hang_id ';
-
+            $sql = 'DELETE FROM chi_tiet_gio_hangs 
+                    WHERE san_pham_id = :san_pham_id AND gio_hang_id = :gio_hang_id';
             $stmt = $this->conn->prepare($sql);
-
-            $stmt->execute([':san_pham_id' => $id_san_pham, ':gio_hang_id' => $gioHangId]);
-
+            $stmt->execute([
+                ':san_pham_id' => $id_san_pham,
+                ':gio_hang_id' => $gio_hang_id
+            ]);
             return true;
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
-
 
     public function clearGioHang($tai_khoan_id)
     {
         try {
-            $sql = 'DELETE FROM gio_hangs WHERE tai_khoan_id = :tai_khoan_id ';
-
+            $sql = 'DELETE FROM gio_hangs WHERE tai_khoan_id = :tai_khoan_id';
             $stmt = $this->conn->prepare($sql);
-
             $stmt->execute([':tai_khoan_id' => $tai_khoan_id]);
-
             return true;
         } catch (Exception $e) {
-            echo "Lỗi" . $e->getMessage();
+            echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
 }
+?>

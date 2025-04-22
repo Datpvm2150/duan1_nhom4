@@ -14,7 +14,6 @@ require_once './models/TaiKhoan.php';
 require_once './models/GioHang.php';
 require_once './models/DonHang.php';
 require_once './models/DanhMuc.php';
-
 // Route
 $act = $_GET['act'] ?? '/';
 // var_dump($_GET['act']);die();
@@ -35,20 +34,22 @@ match ($act) {
     'chi-tiet-san-pham'                     =>(new HomeController())->chiTietSanPham(),
     'them-gio-hang'                         =>(new HomeController())->addGioHang(),
     'gio-hang'                              =>(new HomeController())->gioHang(),
+    'xoa-san-pham-trong-gio-hang'           => (new HomeController())->xoaSanPhamTrongGioHang(),
     'thanh-toan'                            =>(new HomeController())->thanhToan(),
     'xu-ly-thanh-toan'                      =>(new HomeController())->postThanhToan(),
     'lich-su-mua-hang'                      =>(new HomeController())->lichSuMuaHang(),
     'chi-tiet-mua-hang'                     =>(new HomeController())->chiTietMuaHang(),
     'huy-don-hang'                          =>(new HomeController())->huyDonHang(),
 
-     // Auth 
-     'login'                                 =>(new HomeController())->formLogin(),
-     'check-login'                           =>(new HomeController())->postLogin(),
-     'register'                              =>(new HomeController())->formRegister(),
-     'check-register'                        =>(new HomeController())->postRegister(),
-     'dang-xuat'                             =>(new HomeController())->logOut(),
-    
-     // 'danh-muc'                           =>(new HomeController())->danhSachDanhMuc(),
+    // Auth 
+    'login'                                 =>(new HomeController())->formLogin(),
+    'check-login'                           =>(new HomeController())->postLogin(),
+    'register'                              =>(new HomeController())->formRegister(),
+    'check-register'                        =>(new HomeController())->postRegister(),
+    'dang-xuat'                             =>(new HomeController())->logOut(),
+
+
+    // 'danh-muc'                           =>(new HomeController())->danhSachDanhMuc(),
     'san-pham'                              =>(new HomeController())->danhSachSanPham(),
     'binh-luan'                             =>(new HomeController())->postBinhLuan(),
     'contact'                               =>(new HomeController())->contact(),
@@ -59,16 +60,3 @@ match ($act) {
 
     
 };
-
-
-
-
-
-
-
-
-
-
-
-
-?>
