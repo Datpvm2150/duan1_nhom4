@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      By<b>TRANG-DAT-NAM</b>
+      By<b>DUONG-DAT-NAM</b>
     </div>
     <strong>Website bán điện thoại UNIMOBI</strong> 
   </footer>
