@@ -15,7 +15,6 @@
                             <div class="header-top-settings">
                                 <ul class="nav align-items-center justify-content-end">
                                     <li class="nav-item d-none d-sm-inline-block">
-                                        <a href="<?= BASE_URL_ADMIN . '?act=login-admin' ?>" class="nav-link">Admin</a>
                                     </li>
                                     <li class="curreny-wrap">
                                         $ Currency
